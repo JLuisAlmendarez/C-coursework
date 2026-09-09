@@ -29,8 +29,12 @@ int main(){
     scanf("%d", &a);
     printf("¿Que distancia vas a recorrer?\n");
     scanf("%d", &b);
-    int horas = b/a;
-    int minutos = ((b % a) * 60) / a; 
+
+    float tiempo = b/a;
+
+    int horas = (int) tiempo;
+    float decimal_horas = tiempo - horas;
+    int minutos = (int) (decimal_horas*60); 
     printf("Tardaras %d:%d horas con minutos en llegar", horas, minutos);
     return 0; 
 }

@@ -12,13 +12,29 @@ int main(){/*
     printf("%d", c);
     */
     int n = 2;
-    unsigned int caracter = 0x4D451; 
-    unsigned int caracterRotado = caracter >> n + caracter << 8-n;
-    printf("%d\n", &caracter);
-    printf("%d\n", &caracterRotado);
-    unsigned int caracterNoRotado = caracterRotado << 8-n + caracterRotado >> n;
-    printf("%d\n", &caracterNoRotado);
+    unsigned int caracter = 0xBC614E; //scanf(num) to -> hex
+    printf("Valor Original:\n");
+    printf("%x\n", caracter);
+    printf("%u\n", caracter);
+    printf("%b\n\n", caracter);
 
+    unsigned int caracterRecorridoDerechaEnc = caracter >> n;
+    unsigned int caracterRecorridoIzquierdaEnc = caracter << (32-n);
+    unsigned int caracterEncriptado = caracterRecorridoDerechaEnc + caracterRecorridoIzquierdaEnc;
+    
+    printf("Valor Encriptado:\n");
+    printf("%x\n", caracterEncriptado);
+    printf("%u\n", caracterEncriptado);
+    printf("%b\n\n", caracterEncriptado);
+
+    unsigned int caracterRecorridoIzquierdaDenc = caracterEncriptado << n;
+    unsigned int caracterRecorridoDerechaDenc = caracterEncriptado >> (32-n);
+    unsigned int caracterDesencriptado = caracterRecorridoIzquierdaDenc + caracterRecorridoDerechaDenc;
+
+    printf("Valor Desencriptado:\n");
+    printf("%x\n", caracterDesencriptado);
+    printf("%u\n", caracterDesencriptado);
+    printf("%b\n\n", caracterDesencriptado);
 
     return 0;
 }
