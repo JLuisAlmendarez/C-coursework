@@ -1,7 +1,7 @@
 #include <stdio.h>
 /*
 #define SALUDO() printf("Saludosa\n")
-#define MI_EDAD 19
+#define MI_EDAD 19 /
 #define CUADRADO(numero) numero*numero
 
 int main (void) {
