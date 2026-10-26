@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "stats.h"
-
+//
 int main (void){
     int numero1, numero2;
     printf("Introduce los numeros\n");

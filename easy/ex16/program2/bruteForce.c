@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "security.h"
-
+//
 int main(void) {
     for (int pin = 0; pin <= 9999; pin++) { //tambien se puede hacer con un do-while
         int respuesta = validarPin(pin);
