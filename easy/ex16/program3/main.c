@@ -1,14 +1,22 @@
+#include <stdio.h>
+
+
 int fibbonacci (int numero){
+    
+    if (numero <= 0){
+        return 0;
+    }
+    if (numero == 1){
+        return 1;
+    }
 
-    int numero =
-
-    return numero;
+    return fibbonacci(numero-1)+fibbonacci(numero-2);
 }
 
 int main(void) {
 
-    int numero;
+    int fib = fibbonacci(3);
 
-    
+    printf("%d", fib);
 
 }
