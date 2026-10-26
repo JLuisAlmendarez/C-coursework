@@ -1,0 +1,10 @@
+
+Compilado simple:
+gcc -c main.c -o main.o
+gcc -c cats.c -o cats.o
+gcc main.o cats.o -o programa
+
+Enlazado con librerias externas:
+gcc -c cats.c -o cats.o
+ar rcs libcats.a cats.o
+gcc main.o -L. -lcats -o main.exe
