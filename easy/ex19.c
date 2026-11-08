@@ -1,47 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-enum { ROWS = 3, COLUMNS = 3 };
+void sumMatrix(int rows, int columns,
+               int matrix1[rows][columns],
+               int matrix2[rows][columns],
+               int result[rows][columns]) {
 
-void sumMatrix(int matrix1[ROWS][COLUMNS],
-               int matrix2[ROWS][COLUMNS],
-               int result[ROWS][COLUMNS]) {
-
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLUMNS; j++) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
             result[i][j] = matrix1[i][j] + matrix2[i][j];
         }
     }
 }
 
-void printMatrix(int matrix[ROWS][COLUMNS]) {
+int main(void) {
 
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLUMNS; j++) {
-            printf(j == 0 ? "%d" : " %d", matrix[i][j]);
+    int mat1[3][3] = {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
+    
+    int mat2[3][3] = {
+        {1,2,3},
+        {-1,-2,-3},
+        {0,4,-4}
+    };
+
+    int result[3][3];
+
+    sumMatrix(3, 3, mat1, mat2, result);
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf(j == 0 ? "%d" : " %d", result[i][j]);
         }
         printf("\n");
     }
-}
-
-int main(void) {
-
-    int mat1[ROWS][COLUMNS] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
-
-    int mat2[ROWS][COLUMNS] = {
-        {1, 2, 3},
-        {-1, -2, -3},
-        {0, 4, -4}
-    };
-
-    int result[ROWS][COLUMNS];
-
-    sumMatrix(mat1, mat2, result);
-    printMatrix(result);
 
     return EXIT_SUCCESS;
 }
