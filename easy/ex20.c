@@ -26,13 +26,28 @@ void ordenarPorSeleccion(int arreglo[], int n){
 
 }
 */
-
+/*
 void fillArray(int arr[], int foward, int fill){
     for (int i=0;i<foward;i++){
         arr[i] = fill;
     }
 }
+*/
 
+
+
+void ordenarPorBurbuja(int arreglo[], int n){
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < (n-i-1) ; j++) {
+            if (arreglo[j]>arreglo[j+1]){
+                int temp = arreglo[j];                      
+                arreglo[j] = arreglo[j + 1];
+                arreglo[j + 1] = temp;
+            }
+        }
+    }
+
+}
 
 int main(){
     /*
@@ -75,16 +90,21 @@ int main(){
         {73, 11, 26, 50, 99, 35, 68, 59, 21,  4},
         {44, 93, 16, 62, 80, 48, 32, 76, 87, 54}
     };
-
+    /*
     fillArray(&arr[0][0]+55, 31, 7);
 
     imprimir_arreglo(&arr[0][0], 100);
 
 
     // estudiar & y * 
-    
+    */
 
- 
+    int arreglo[] = {2,5,4,3,1,6,9,8,7,0};
+
+    imprimir_arreglo(arreglo, 10);
+    ordenarPorBurbuja(arreglo, 10);
+    printf("\n");
+    imprimir_arreglo(arreglo, 10); 
 
     return EXIT_SUCCESS;
 }
