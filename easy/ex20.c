@@ -4,10 +4,9 @@
 void imprimir_arreglo(int arreglo[], int n){
     for (int i = 0; i < n; i++) {
         printf("%d", arreglo[i]);
-    
     }
-
 }
+
 /*
 void ordenarPorSeleccion(int arreglo[], int n){
     for (int i = 0; i < n-1 ; i++) {
@@ -77,7 +76,9 @@ int main(){
         {44, 93, 16, 62, 80, 48, 32, 76, 87, 54}
     };
 
-    fillArray(&arr[0][0], 5, 7);
+    fillArray(&arr[0][0]+55, 31, 7);
+
+    imprimir_arreglo(&arr[0][0], 100);
 
 
     // estudiar & y * 
