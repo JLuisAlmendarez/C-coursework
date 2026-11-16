@@ -1,0 +1,61 @@
+#include <bits/posix2_lim.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void toUpperCase(char frase[], int tamanio){
+    for (int i = 0; i < tamanio; i++) {
+        if(frase[i] >= 97 && frase[i] <= 122){
+            frase[i] = frase[i]-32;
+        }
+    
+    }
+}
+void reverse(char frase[]){
+    int tamanio = strlen(frase);
+
+    for (int i = 0; i < tamanio/2; i++) {
+        char temporal = frase[i];
+        frase[i] = frase[tamanio-1-i];
+        frase[tamanio -1 -i]=temporal;
+    }
+
+}
+
+void sort(char string1[], char string2[]){
+    
+    char s1 = string1[0];
+    char s2 = string2[0];
+    
+    int cond;
+
+    if (strcmp(string1, string2) > 0) {
+    
+    
+        char temporal[strlen(string1) + 1];
+
+        strcpy(temporal, string1);
+        strcpy(string1, string2);
+        strcpy(string2, temporal);
+    }
+}
+
+int main(void){
+    
+    char frase_bonita[30] = "Que onda!";
+
+    toUpperCase(frase_bonita, 30);
+    printf("%s\n", frase_bonita);
+
+    reverse(frase_bonita);//corregir con nueva variable.  Hacer v2 o usar strcpy
+    printf("%s\n", frase_bonita);
+
+    char string1[10]="Hola";
+    char string2[10]="Adios";
+
+    sort(string1, string2);
+    printf("%s", string1);
+    printf("%s", string2);
+    return EXIT_SUCCESS;
+}
