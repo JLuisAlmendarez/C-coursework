@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct fecha {
     short dia;
@@ -20,10 +21,13 @@ void limpiarNombre(char nombre[], int longitud){
         if(nombre[i]=='\n'){
             nombre[i]=0;
         }
-    
     }
-
 }
+
+struct strmateria{
+    char nombre[50];
+    float calificacion;
+};
 
 int main(void){
 
@@ -47,11 +51,40 @@ int main(void){
     printf("Un saludo a mis alumnos\n");
     for (int i=0;i<5;i++) {
         printf("%s", alumnos[i].nombre);
-    if (i < 4) {
-        printf(", ");
+        if (i < 4) {
+            printf(", ");
+        }
     }
-    
+
+    struct strmateria materias[3];
+
+    printf("Ingresa materias y calificacion");
+
+    for (int i=0;i<3;i++) {
+        printf("\nMateria %d: ", i + 1);
+        fgets(materias[i].nombre, 50, stdin);
+
+        for (int j = 0; materias[i].nombre[j] != '\0'; j++) {
+            if (materias[i].nombre[j] == '\n') {
+                materias[i].nombre[j] = '\0';
+            }
+        }
+
+        printf("Calificacion: ");
+        scanf("%f", &materias[i].calificacion);
+        while (getchar() != '\n');
     }
+
+    float suma = 0;
+
+    for (int i=0;i<3;i++) {
+        suma += materias[i].calificacion;
+    }
+
+    float promedio = suma/3;
+
+    printf("El promedio del semestre es %f", promedio);
+
 
     return EXIT_SUCCESS;
 }
